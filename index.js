@@ -39,6 +39,8 @@ module.exports = {
     }
   },
   rules: {
+    'react/require-default-props': 0,
+    'react/jsx-props-no-spreading': 0,
     'react/function-component-definition': [2, { 'namedComponents': 'arrow-function' }],
     'import/prefer-default-export': 0,
     'import/extensions': [2, { '.tsx': 'never', '.ts': 'never', '.js': 'never' }],
