@@ -28,8 +28,14 @@ module.exports = {
     'prettier'
   ],
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx']
+    },
     'import/resolver': {
       'typescript': {}
+    },
+    'react': {
+      'version': 'detect'
     }
   },
   rules: {
@@ -48,6 +54,19 @@ module.exports = {
       rules: {
         '@typescript-eslint/explicit-function-return-type': ['error']
       }
+    },
+    {
+      // enable eslint-plugin-testing-library rules or preset only for matching files!
+      'files': ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      'extends': ['plugin:jest/recommended', 'plugin:testing-library/react']
+    },
+    {
+      'files': ['**/*.ts?(x)'],
+      'parser': '@typescript-eslint/parser',
+      'extends': [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript'
+      ]
     }
   ],
   globals: {
