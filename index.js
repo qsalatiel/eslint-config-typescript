@@ -49,7 +49,8 @@ module.exports = {
     'no-console': ['error', { 'allow': ['warn', 'error'] }],
     'arrow-body-style': 0,
     '@typescript-eslint/explicit-function-return-type': 'error',
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'quotes': 'single'
   },
   overrides: [
     {
