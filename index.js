@@ -50,7 +50,7 @@ module.exports = {
     'arrow-body-style': 0,
     '@typescript-eslint/explicit-function-return-type': 'error',
     'prettier/prettier': 'error',
-    'quotes': 'single'
+    'quotes': [2, 'single']
   },
   overrides: [
     {
