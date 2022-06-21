@@ -42,6 +42,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'import/extensions': [2, { '.tsx': 'never', '.ts': 'never', '.js': 'never' }],
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+    'react/jsx-one-expression-per-line': 0,
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'arrow-body-style': 0,
     '@typescript-eslint/explicit-function-return-type': 'error',
