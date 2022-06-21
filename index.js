@@ -1,71 +1,68 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'plugin:import/typescript',
+    'prettier',
+    'plugin:react/recommended',
     'airbnb',
     'airbnb/hooks',
-    'prettier',
     'plugin:react/jsx-runtime',
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    'ecmaVersion': 'latest',
-    'sourceType': 'module'
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'prettier'
-  ],
+  plugins: ['react', '@typescript-eslint', 'prettier'],
   settings: {
     'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx']
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
-      'typescript': {}
+      typescript: {},
     },
-    'react': {
-      'version': 'detect'
-    }
+    react: {
+      version: 'detect',
+    },
   },
   rules: {
     'react/require-default-props': 0,
     'react/jsx-props-no-spreading': 0,
-    'react/function-component-definition': [2, { 'namedComponents': 'arrow-function' }],
+    'react/function-component-definition': [2, { namedComponents: 'arrow-function' }],
     'import/prefer-default-export': 0,
     'import/extensions': [2, { '.tsx': 'never', '.ts': 'never', '.js': 'never' }],
-    'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
-    'no-console': ['error', { 'allow': ['warn', 'error'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'arrow-body-style': 0,
     '@typescript-eslint/explicit-function-return-type': 'error',
-    'prettier/prettier': 'error',
-    'quotes': [2, 'single']
+    'prettier/prettier': ['error', { singleQuote: true }],
+    quotes: ['error', 'single'],
+    semi: [2, 'never'],
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       rules: {
-        '@typescript-eslint/explicit-function-return-type': ['error']
-      }
+        '@typescript-eslint/explicit-function-return-type': ['error'],
+      },
     },
     {
       // enable eslint-plugin-testing-library rules or preset only for matching files!
-      'files': ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      'extends': ['plugin:jest/recommended', 'plugin:testing-library/react']
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:jest/recommended', 'plugin:testing-library/react'],
     },
   ],
   globals: {
-    JSX: 'readonly'
-  }
+    JSX: 'readonly',
+  },
 }
